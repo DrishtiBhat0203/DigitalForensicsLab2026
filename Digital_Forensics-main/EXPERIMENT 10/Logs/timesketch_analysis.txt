@@ -1,0 +1,13 @@
+TIMESKETCH INVESTIGATIVE LOG - CASE ID: 2026-DFIR-01
+---------------------------------------------------
+[QUERY]: data_type:"windows:evtx:record" AND event_identifier:4624
+[RESULT]: Found Login event for user 'admin' at 2026-04-28 09:12:05 (Source IP: 192.168.1.55)
+
+[QUERY]: message:"*wipe*" OR message:"*delete*"
+[RESULT]: Found execution of 'wipe_evidence.exe' at 2026-04-28 09:45:10.
+
+[CORRELATION]: 
+- 09:12:05: Unauthorized VPN Login detected.
+- 09:30:15: Large data transfer to 'mega.nz' detected in Chrome Cache (Exp 07).
+- 09:45:10: Wiping utility executed to cover tracks.
+- 10:00:00: System manually rebooted.
